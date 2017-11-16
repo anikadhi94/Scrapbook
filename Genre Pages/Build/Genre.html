@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    
+  <link rel="stylesheet" type="text/css" href="../build/css/stylesheet.css">  
+    	
+<link rel="stylesheet" type="text/css" href="../build/css/styles.css">
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="../build/js/vendor/velocity.min.js"></script>
+	<script src="../build/js/vendor/hammer.min.js"></script>
+	<script src="../build/js/jquery.fireSlider.js"></script>
+
+</head>
+
+<body>
+
+
+ <header id="pageHeader">Header</header>
+ <div id="mainArticle">
+    <div class="box slide"><div class="section fireslider js-fireslider">
+		<ul id="fireSlider" 
+			data-fireslider-delay="4000">
+			<li class="slide-1">1
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</li>
+			<li class="slide-2">2
+				<a href="http://www.google.com">Test Link Clicking</a>
+			</li>
+			<li class="slide-3">3</li>
+			<!-- <li class="slide-4">4</li>
+			<li class="slide-5">5</li> -->
+		</ul>
+
+		<div class="pager"></div>
+	</div>
+
+	<a class="prev" href="">Prev</a>
+	<a class="next" href="">Next</a>
+	<a class="reverse" href="">Reverse</a></div>
+    <div class="box event"><h3>Live And Upcoming events</h3></div>
+    <div class="box content">
+	<div class="box grid"><article>
+    <img src="/pix/samples/23l.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Seamlessly visualize quality</h3>
+      <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
+      <button>Here's why</button>
+    </div>
+  </article>
+  <article>
+    <img src="/pix/samples/24m.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Completely Synergize</h3>
+      <p>Dramatically engage seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing.</p>
+      <button>Here's how</button>
+    </div>
+  </article>
+  <article>
+    <img src="/pix/samples/22l.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Dynamically Procrastinate</h3>
+      <p>Completely synergize resource taxing relationships via premier niche markets.</p>
+      <button>Read more</button>
+    </div>
+  </article>
+  <article>
+    <img src="/pix/samples/15l.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Best in class</h3>
+      <p>Imagine jumping into that boat, and just letting it sail wherever the wind takes you...</p>
+      <button>Just do it...</button>
+    </div>
+  </article>
+  <article>
+    <img src="/pix/samples/25m.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Dynamically innovate supply chains</h3>
+      <p>Holisticly predominate extensible testing procedures for reliable supply chains.</p>
+      <button>Here's why</button>
+    </div>
+  </article>
+  <article>
+    <img src="/pix/samples/16l.jpg" alt="Sample photo">
+    <div class="text">
+      <h3>Sanity check</h3>
+      <p>Objectively innovate empowered manufactured products whereas parallel platforms.</p>
+      <button>Stop here</button>
+    </div>
+  </article></div>
+  </div>
+    
+ </div>
+  
+  <nav id="mainNav">
+  <div id="logo logo1"><img src="logo.png" alt="logo"> 
+   
+</div><p><h3>Music</h3>The sounds which move the soul. <br>
+<details>
+  <summary>Subgenres</summary>
+  
+  <ul><li>Rock</li>
+<li>Metal</li>
+<li>Country</li>
+<li>Pop</li>
+<li>EDM</li>
+<li>Rap</li></ul>
+</details>
+
+</nav>
+  <div id="siteAds"><button class="button" style="vertical-align:middle"><span>Subscribe </span></button>
+  <p><b>  Subcribers:</b> none.<br>
+  <b>  Articles:</b> none.</div>
+  <footer id="pageFooter">Footer</footer>
+		<script type="text/javascript">
+
+		/* REGISTER NEW TRANSITION EFFECT */
+		// var slideInOut = function (el, options) {
+		// 	var duration = (options.snapping) ? 0 : options.speed;
+		// 	el.velocity({translateX: [(options.nextPos + '%'), (options.currPos + '%')]}, {duration: duration, queue: options.effect, easing: options.easing});
+		// };
+
+		// fireSlider.prototype.Effects.register('slideInOut', slideInOut);
+
+		/* USING FIRESLIDER */
+		var sliders = $('.js-fireslider > ul').each(function () {
+				$(this).data({
+					'pager': $(this).siblings('.pager'),
+					'prev': $(this).parent().nextUntil('div[class*=js-fireslider]', '.prev'),
+					'next': $(this).parent().nextUntil('div[class*=js-fireslider]', '.next'),
+				});
+			}).fireSlider({
+				'direction': 'up'
+			});
+
+
+		var carousels = $('.js-fireslider-carousel > div.carousel').each(function () {
+				$(this).data({
+					'pager': $(this).siblings('.pager'),
+					'prev': $(this).parent().nextUntil('div[class*=js-fireslider]', '.prev'),
+					'next': $(this).parent().nextUntil('div[class*=js-fireslider]', '.next')
+				});
+			}).fireSlider({
+				active: 3,
+				breakpoints: [
+					{"breakpoint": 1, "show": 1, "active": 1},
+					{"breakpoint": 520, "show": 2, "active": 1},
+					{"breakpoint": 720, "show": 3, "active": 2},
+					{"breakpoint": 860, "show": 5, "active": 3}
+				],
+				delay: 2000,
+				effect: "slideInOut",
+				show: 5,
+				slide: 'div[class*=slide]',
+				speed: 400
+			});
+
+
+		var thumbnailCarousles = $('.js-fireslider-thumbnail-carousel > ul').each(function () {
+				$(this).data({
+					'pager': $(this).parent().nextUntil('div[class*=js-fireslider]', '#thumbnailPager'),
+					'prev': $(this).parent().nextUntil('div[class*=js-fireslider]', '.prev'),
+					'next': $(this).parent().nextUntil('div[class*=js-fireslider]', '.next')
+				});
+			}).fireSlider({
+				active: 3,
+				breakpoints: [
+					{"breakpoint": 1, "show": 1, "active": 1},
+					{"breakpoint": 520, "show": 2, "active": 1},
+					{"breakpoint": 720, "show": 3, "active": 2},
+					{"breakpoint": 860, "show": 5, "active": 3}
+				],
+				delay: 2000,
+				effect: "slideInOut",
+				show: 5,
+				speed: 400
+			});
+
+
+		// Override original slider
+		// var second = $('#fireSlider').each(function () {
+		// 	$(this).data({
+		// 		'next': {},
+		// 		'prev': {}
+		// 	});
+		// }).fireSlider({
+		// 	direction: 'backward'
+		// });
+
+		// Listen to events
+		// sliders.on('fireSlider:prev', function (e) {
+		// 	console.log('prev');
+		// });
+
+		$('a.reverse').click(function (e) {
+			e.preventDefault();
+			$(this).prevAll('div[class*=js-fireslider]:first').find('ul').data('fireSlider').reverse();
+		});
+
+		$(window).resize(function () {
+			var slider = carousels.data('fireSlider');
+			if (window.outerWidth > 500) {
+				if (slider.state.isPaused) slider.play();
+			} else {
+				if (!slider.state.isPaused) {
+					slider.slide(0);
+					slider.pause();
+				}
+			}
+		});
+
+
+		/* SHOULDN'T ERROR - when no slider exists */
+		$('.test').fireSlider();
+
+	</script>
+	
+        
+</body>
+
+</html>
